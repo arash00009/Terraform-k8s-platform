@@ -9,20 +9,8 @@ terraform {
 
 provider "kind" {}
 
-resource "kind_cluster" "default" {
-  name           = "devops-portfolio"
-  wait_for_ready = true
-
-  kind_config {
-    kind        = "Cluster"
-    api_version = "kind.x-k8s.io/v1alpha4"
-
-    node {
-      role = "control-plane"
-    }
-
-    node {
-      role = "worker"
-    }
-  }
+module "cluster" {
+  source       = "./modules/kind-cluster"
+  cluster_name = var.cluster_name
+  worker_count = var.worker_count
 }
