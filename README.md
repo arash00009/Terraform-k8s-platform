@@ -17,3 +17,8 @@ kubectl get nodes
 ## Roadmap
 - [ ] v0.2: Modulariserad kod + remote state
 - [ ] v0.3: Flera miljöer (dev/prod) + FluxCD-integration
+
+## v0.2 – Moduler & Remote State
+- Klusterlogik refaktorerad till återanvändbar modul (`modules/kind-cluster`)
+- State hanteras via HCP Terraform (remote backend) med local execution mode
+  (nödvändigt eftersom `kind`-providern kräver lokal Docker-åtkomst)
