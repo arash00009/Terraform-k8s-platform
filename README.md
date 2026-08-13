@@ -27,3 +27,9 @@ kubectl get nodes
 - Klusterlogik refaktorerad till återanvändbar modul (`modules/kind-cluster`)
 - State hanteras via HCP Terraform (remote backend) med local execution mode
   (nödvändigt eftersom `kind`-providern kräver lokal Docker-åtkomst)
+
+## v0.3 – Multi-Environment + GitOps
+- Separata dev/prod-miljöer med isolerat state (egna HCP Terraform workspaces)
+- Prod skalad med fler workers för att visa miljöskillnader
+- FluxCD bootstrappat mot dev-klustret, synkar automatiskt från [gitops-dev-repo](https://github.com/arash00009/gitops-dev-repo)
+- Fullständig kedja: Terraform (infrastruktur) → FluxCD (GitOps) → applikation
