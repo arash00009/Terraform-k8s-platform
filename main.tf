@@ -5,6 +5,14 @@ terraform {
       version = "0.6.0"
     }
   }
+
+  cloud {
+    organization = "arash-devops-portfolio"
+
+    workspaces {
+      name = "terraform-k8s-platform"
+    }
+  }
 }
 
 provider "kind" {}
