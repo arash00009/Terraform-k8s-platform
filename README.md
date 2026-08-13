@@ -22,3 +22,8 @@ kubectl get nodes
 - Klusterlogik refaktorerad till återanvändbar modul (`modules/kind-cluster`)
 - State hanteras via HCP Terraform (remote backend) med local execution mode
   (nödvändigt eftersom `kind`-providern kräver lokal Docker-åtkomst)
+
+## v0.2 – Moduler & Remote State
+- Klusterlogik refaktorerad till återanvändbar modul (`modules/kind-cluster`)
+- State hanteras via HCP Terraform (remote backend) med local execution mode
+  (nödvändigt eftersom `kind`-providern kräver lokal Docker-åtkomst)
